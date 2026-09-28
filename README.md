@@ -17,19 +17,15 @@ folder paths, then opens a draft in Buzz Desktop that **you** approve. It isn't 
 
 Paste [`SETUP_PROMPT.md`](SETUP_PROMPT.md) to your chief of staff in Buzz, or to Claude Code. It does all of this:
 
-**Claude Code** — add to `~/.claude/settings.json` (Windows: `%USERPROFILE%\.claude\settings.json`), merging with what's there:
+**Claude Code:**
 
-```json
-{
-  "extraKnownMarketplaces": {
-    "bbm-buzz-agents": {
-      "source": { "source": "github", "repo": "Brand-Building-Machine/bbm-buzz-agents", "ref": "release" },
-      "autoUpdate": true
-    }
-  },
-  "enabledPlugins": { "bbm-agents@bbm-buzz-agents": true }
-}
 ```
+claude plugin marketplace add "Brand-Building-Machine/bbm-buzz-agents#release"
+claude plugin install bbm-agents@bbm-buzz-agents
+```
+
+Then turn on auto-update: in `~/.claude/settings.json` (Windows: `%USERPROFILE%\.claude\settings.json`), add
+`"autoUpdate": true` to `extraKnownMarketplaces.bbm-buzz-agents`. Do this *after* the `add` command, which rewrites that entry.
 
 **Codex:**
 

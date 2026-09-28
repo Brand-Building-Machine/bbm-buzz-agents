@@ -2,17 +2,12 @@ Install the BBM Buzz Agents plugin on this machine for both Claude Code and Code
 
 1. **Find what's installed.** Check which of `claude` and `codex` exist on this machine, their versions, the OS, and which Python the Buzz agents use (3.10+ needed). Report before changing anything if something is missing.
 
-2. **Claude Code.** Read `~/.claude/settings.json` (Windows: `%USERPROFILE%\.claude\settings.json`); create it if missing. Merge in — don't overwrite anything already there:
-   ```json
-   "extraKnownMarketplaces": {
-     "bbm-buzz-agents": {
-       "source": { "source": "github", "repo": "Brand-Building-Machine/bbm-buzz-agents", "ref": "release" },
-       "autoUpdate": true
-     }
-   },
-   "enabledPlugins": { "bbm-agents@bbm-buzz-agents": true }
+2. **Claude Code.** Run, in this order:
    ```
-   Validate the file is still valid JSON. Then run `claude plugin marketplace update bbm-buzz-agents` and `claude plugin list` and confirm `bbm-agents` shows as installed and enabled.
+   claude plugin marketplace add "Brand-Building-Machine/bbm-buzz-agents#release"
+   claude plugin install bbm-agents@bbm-buzz-agents
+   ```
+   The `add` command rewrites the marketplace entry in `~/.claude/settings.json` (Windows: `%USERPROFILE%\.claude\settings.json`) and drops auto-update. **After** it runs, open that file and set `"autoUpdate": true` inside `extraKnownMarketplaces.bbm-buzz-agents` — change nothing else. Confirm the file is still valid JSON, then run `claude plugin list` and confirm `bbm-agents` is installed and enabled.
 
 3. **Codex** (skip if Codex isn't installed):
    ```
