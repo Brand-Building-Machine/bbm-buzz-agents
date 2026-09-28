@@ -10,6 +10,16 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **Research Lead** | Commissioned research with a four-subagent team, sourced and fact-checked | Claude |
 | **YouTube Desk** | Briefs, answers and searches from YouTube | Claude or Codex |
 
+**Skills they use** (also usable directly):
+
+| Skill | What it does |
+|---|---|
+| `wiki-ingest` | Files a meeting transcript or source into your knowledge base: wiki pages, meeting note, next actions, risks, strategy, decisions |
+| `wiki-ask` | Answers "what do we know / what did we decide" from your knowledge base, with citations |
+| `wiki-audit` | Health check: orphan pages, unfiled sources, dead links, contradictions, stale claims. Read-only |
+| `yt-intel` · `yt-ask` · `yt-search` · `yt-corpus` | YouTube briefs, answers, search, and bulk transcripts |
+| `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
+
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and
 folder paths, then opens a draft in Buzz Desktop that **you** approve. It isn't an agent until you save it.
 
@@ -56,7 +66,7 @@ themselves — `install-agent` offers them as drafts for you to approve.
 ```
 plugins/bbm-agents/
   personas/     the four agents (templates with {{PLACEHOLDERS}})
-  skills/       install-agent, workspace-config, yt-intel, yt-ask, yt-search, yt-corpus
+  skills/       install-agent, workspace-config, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```

@@ -5,6 +5,9 @@
   "WORKSPACE_MAP": "/Users/sam/Workspace/AGENTS.md",
   "PROPOSED_PATH": "/Users/sam/Workspace/proposed",
   "RAW_SOURCES_PATH": "/Users/sam/Workspace/knowledge/raw",
+  "WIKI_PATH": "/Users/sam/Workspace/knowledge/wiki",
+  "STATE_PATH": "/Users/sam/Workspace/state",
+  "SCOPE_STATE_PATTERN": "",
   "RESEARCH_RUNS_PATH": "/Users/sam/Workspace/research/runs",
   "TASK_RULES": "Create tasks in ClickUp; every task needs a due date.",
   "BOUNDARIES_FILE": ""

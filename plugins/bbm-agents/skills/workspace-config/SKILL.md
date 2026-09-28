@@ -18,8 +18,11 @@ Finds the owner's workspace, proposes the values the agents need, and writes the
 | `WORKSPACE_ROOT` | Absolute path to the workspace repo checkout | yes |
 | `WORKSPACE_MAP` | Absolute path to the file that explains the folder layout (AGENTS.md, CLAUDE.md, a MAP file) | yes |
 | `PROPOSED_PATH` | Absolute path where agents put drafts the owner hasn't confirmed | yes |
-| `RAW_SOURCES_PATH` | Absolute path where YouTube Desk drops captured sources | yes |
+| `RAW_SOURCES_PATH` | Absolute path where raw sources land before filing: meeting transcripts, YouTube Desk output, clippings (the wiki skills read it) | yes |
 | `RESEARCH_RUNS_PATH` | Absolute path where Research Lead writes run folders | yes |
+| `WIKI_PATH` | Absolute path to the wiki (`entities/`, `concepts/`, `topics/`, `index.md`, `log.md`). Existing one if the workspace has it; otherwise propose `<knowledge folder>/wiki` | yes |
+| `STATE_PATH` | Absolute path to living state (`current/`, `decisions/`, `meetings/`) | yes |
+| `SCOPE_STATE_PATTERN` | Only if the workspace tracks several businesses/clients separately: the per-scope state folder with `{scope}` in it, e.g. `/…/state/projects/{scope}` | no |
 | `TASK_RULES` | One sentence on the task tool, e.g. "Create tasks in ClickUp list X; every task needs a due date; assignee id N." | no — leave empty if none |
 | `BOUNDARIES_FILE` | Absolute path to the owner's written approval/autonomy rules, if they have one | no |
 
@@ -35,7 +38,7 @@ Example: `examples/buzz-agents.config.example.json` in the plugin root.
 
 4. **After a yes**, write the file with absolute paths using the OS's native separators (Windows paths are fine; JSON needs `\\` escaped). Create any missing folders you proposed. Write the pointer file `~/.bbm-agents.json`.
 
-5. **Verify:** run `python3 <install-agent skill dir>/scripts/agents.py config` (Windows: `python` / `py`) and confirm every path exists. Then `agents.py render chief-of-staff` must exit 0.
+5. **Verify:** run `python3 <install-agent skill dir>/scripts/agents.py config` (Windows: `python` / `py`) and confirm every path exists. Then `agents.py render chief-of-staff` must exit 0, and `python3 <wiki-ingest skill dir>/scripts/wiki.py paths` must resolve every knowledge path (run `wiki.py init` to create a missing wiki after telling the owner).
 
 6. **Commit only the config file** to the workspace repo if the owner's workspace rules allow agents to commit; otherwise leave it for them and say so. Never commit anything else as part of this.
 
