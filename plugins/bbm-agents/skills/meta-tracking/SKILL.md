@@ -59,4 +59,4 @@ A top-level message: the verdict, the top 3 fixes and who does each, the path, "
 
 ## Limits
 
-Read-only. Never edit website code, install tags, change Events Manager settings or connect integrations; write the steps and the owner or their web person does them. Never ask for or store passwords or access tokens.
+Read-only. Never edit website code, install tags, change Events Manager settings or connect integrations; write the steps and the owner or their web person does them. Never ask for or store passwords or access tokens. Work from what the owner tells you, the files they point to, and Meta's connector. Don't search email, drives, calendars or other connected apps to check their numbers unless they ask you to, and first confirm the account is theirs.
