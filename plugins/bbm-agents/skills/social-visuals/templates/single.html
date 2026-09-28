@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Single image</title>
+<style>
+/*BRAND_CSS*/
+
+/* One image, {{W}}x{{H}} px. Keep exactly one <section class="slide ...">.
+   Layouts: framework (steps or blocks), quote, stat. visuals.py render --no-pdf makes slide-01.png. */
+:root {
+  --s-w: {{W}}px;
+  --s-h: {{H}}px;
+  --s-pad: 88px;
+  --c-bg: var(--brand-bg, #ffffff);
+  --c-ink: var(--brand-ink, #111827);
+  --c-muted: var(--brand-muted, #4b5563);
+  --c-primary: var(--brand-primary, #1d4ed8);
+  --c-accent: var(--brand-accent, var(--brand-primary, #1d4ed8));
+  --c-surface: var(--brand-surface, color-mix(in srgb, var(--c-ink) 6%, var(--c-bg)));
+  --f-display: var(--brand-font-display, system-ui, sans-serif);
+  --f-body: var(--brand-font-body, system-ui, sans-serif);
+  --radius: var(--brand-radius, 16px);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+.slide {
+  width: var(--s-w); height: var(--s-h); padding: var(--s-pad);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 36px;
+  background: var(--c-bg); color: var(--c-ink); font-family: var(--f-body);
+}
+.slide h1 { font-family: var(--f-display); font-size: 80px; line-height: 1.05; letter-spacing: -0.02em; margin: 0; }
+.slide p { font-size: 36px; line-height: 1.35; margin: 0; color: var(--c-muted); }
+.kicker { font-size: 28px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--c-primary); }
+
+/* framework: 3-6 blocks. Let the post decide the count; legibility decides the size. */
+.blocks { display: grid; grid-template-columns: 1fr; gap: 22px; flex: 1; align-content: center; }
+.block { display: flex; gap: 28px; align-items: center; padding: 28px 32px; background: var(--c-surface); border-radius: var(--radius); }
+.block b { font-family: var(--f-display); font-size: 48px; color: var(--c-accent); min-width: 72px; }
+.block span { font-size: 36px; line-height: 1.25; }
+
+.source { font-size: 28px; color: var(--c-muted); }
+.foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; font-size: 28px; color: var(--c-muted); }
+.foot img { height: 48px; width: auto; }
+</style>
+</head>
+<body>
+
+<section class="slide framework">
+  <div class="kicker">[Kicker]</div>
+  <h1>[Headline, 5-8 words]</h1>
+  <div class="blocks">
+    <div class="block"><b>1</b><span>[Step or point]</span></div>
+    <div class="block"><b>2</b><span>[Step or point]</span></div>
+    <div class="block"><b>3</b><span>[Step or point]</span></div>
+  </div>
+  <div class="foot"><span>[Author name]</span><span>[Business]</span></div>
+</section>
+
+</body>
+</html>

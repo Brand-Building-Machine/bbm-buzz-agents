@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carousel</title>
+<style>
+/*BRAND_CSS*/
+
+/* Slide frame. Size {{W}}x{{H}} px. Every slide is a top-level <section class="slide ...">;
+   visuals.py render turns each one into a PNG and all of them into one PDF.
+   Layouts: cover, point, stat, quote, list, close. Hybrid: <img class="art"> first, text inside .panel. Use one frame for the whole carousel;
+   only the content changes from slide to slide. Minimum text size 28px. */
+:root {
+  --s-w: {{W}}px;
+  --s-h: {{H}}px;
+  --s-pad: 96px;
+  --c-bg: var(--brand-bg, #ffffff);
+  --c-ink: var(--brand-ink, #111827);
+  --c-muted: var(--brand-muted, #4b5563);
+  --c-primary: var(--brand-primary, #1d4ed8);
+  --c-accent: var(--brand-accent, var(--brand-primary, #1d4ed8));
+  --c-surface: var(--brand-surface, color-mix(in srgb, var(--c-ink) 6%, var(--c-bg)));
+  --f-display: var(--brand-font-display, system-ui, sans-serif);
+  --f-body: var(--brand-font-body, system-ui, sans-serif);
+  --radius: var(--brand-radius, 16px);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+.slide {
+  width: var(--s-w); height: var(--s-h); padding: var(--s-pad);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; justify-content: center; gap: 40px;
+  background: var(--c-bg); color: var(--c-ink); font-family: var(--f-body);
+}
+.slide h1, .slide h2 { font-family: var(--f-display); margin: 0; letter-spacing: -0.02em; line-height: 1.05; }
+.slide h1 { font-size: 104px; }
+.slide h2 { font-size: 76px; }
+.slide p { font-size: 40px; line-height: 1.35; margin: 0; color: var(--c-muted); }
+.kicker { font-size: 30px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--c-primary); }
+.num { font-family: var(--f-display); font-size: 40px; font-weight: 800; color: var(--c-accent); }
+
+/* cover: the thumbnail in the feed. Biggest type, fewest words. */
+.slide.cover { background: var(--c-primary); color: var(--c-bg); }
+.slide.cover p, .slide.cover .kicker { color: var(--c-bg); opacity: 0.9; }
+.slide.cover .swipe { position: absolute; right: var(--s-pad); bottom: calc(var(--s-pad) + 40px); font-size: 32px; font-weight: 700; }
+
+/* stat: one number carries the slide. */
+.slide.stat .big { font-family: var(--f-display); font-size: 220px; font-weight: 800; line-height: 1; color: var(--c-primary); }
+
+/* quote */
+.slide.quote blockquote { margin: 0; font-family: var(--f-display); font-size: 72px; line-height: 1.15; }
+.slide.quote cite { font-style: normal; font-size: 34px; color: var(--c-muted); }
+
+/* list: up to 5 short items */
+.slide.list ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.slide.list li { font-size: 44px; line-height: 1.25; padding: 28px 36px; background: var(--c-surface); border-radius: var(--radius); }
+
+/* close: one action, not three */
+.slide.close { background: var(--c-ink); color: var(--c-bg); }
+.slide.close p { color: var(--c-bg); opacity: 0.85; }
+
+/* image slot for hybrid slides (generated art underneath, real text on top) */
+.slide .art { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0; }
+.slide > :not(.art):not(.foot):not(.swipe) { position: relative; z-index: 1; }
+.slide .swipe { z-index: 1; }
+/* text on top of artwork: wrap the text in .panel; add .on-dark to the slide when the art is dark */
+.panel { background: color-mix(in srgb, var(--c-bg) 94%, transparent); color: var(--c-ink); padding: 48px 56px; border-radius: var(--radius); display: flex; flex-direction: column; gap: 28px; }
+.slide.on-dark { color: var(--c-bg); }
+.slide.on-dark > p, .slide.on-dark > .foot { color: var(--c-bg); opacity: 0.9; }
+.panel p { color: var(--c-muted); opacity: 1; }
+
+/* where a number came from: small but never under 28px */
+.source { font-size: 28px !important; color: var(--c-muted); }
+
+/* footer on every slide: author + page */
+.foot {
+  position: absolute; left: var(--s-pad); right: var(--s-pad); bottom: 48px;
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 28px; color: inherit; opacity: 0.75; z-index: 2;
+}
+.foot .who { display: flex; align-items: center; gap: 16px; font-weight: 600; }
+.foot img { height: 48px; width: auto; }
+</style>
+</head>
+<body>
+
+<section class="slide cover">
+  <div class="kicker">[Kicker, 2-4 words]</div>
+  <h1>[Cover headline, max 8 words]</h1>
+  <p>[One line that makes the promise concrete]</p>
+  <div class="swipe">Swipe &rarr;</div>
+  <div class="foot"><span class="who">[Author name]</span><span>1/5</span></div>
+</section>
+
+<section class="slide point">
+  <div class="num">01</div>
+  <h2>[One idea, max 8 words]</h2>
+  <p>[Up to ~20 words that land it]</p>
+  <div class="foot"><span class="who">[Author name]</span><span>2/5</span></div>
+</section>
+
+<section class="slide stat">
+  <div class="big">[73%]</div>
+  <h2>[What the number means]</h2>
+  <p>[Source: where the number came from]</p>
+  <div class="foot"><span class="who">[Author name]</span><span>3/5</span></div>
+</section>
+
+<section class="slide list">
+  <h2>[List title]</h2>
+  <ul>
+    <li>[Item one]</li>
+    <li>[Item two]</li>
+    <li>[Item three]</li>
+  </ul>
+  <div class="foot"><span class="who">[Author name]</span><span>4/5</span></div>
+</section>
+
+<section class="slide close">
+  <h2>[The one-line takeaway]</h2>
+  <p>[One action: follow, save, or the real offer]</p>
+  <div class="foot"><span class="who">[Author name]</span><span>5/5</span></div>
+</section>
+
+</body>
+</html>
