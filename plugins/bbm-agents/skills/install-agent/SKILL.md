@@ -1,6 +1,6 @@
 ---
 name: install-agent
-description: Install one of the prebuilt bbm-agents Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk, SEO Desk, Meta Ads Desk) as an owner-reviewed draft, or update an installed one to the latest version. Use when the owner says "install/add/set up the <agent>", "update my agents", "which agents are available", or "are my agents up to date". Never writes or rewrites a persona — it only fills in the owner's names and paths.
+description: Install one of the prebuilt bbm-agents Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk, SEO Desk, Meta Ads Desk, Email Desk) as an owner-reviewed draft, or update an installed one to the latest version. Use when the owner says "install/add/set up the <agent>", "update my agents", "which agents are available", or "are my agents up to date". Never writes or rewrites a persona — it only fills in the owner's names and paths.
 ---
 
 # install-agent
@@ -25,6 +25,7 @@ The script is `scripts/agents.py`, relative to this skill's folder (the folder c
    - YouTube skills need Python 3.10+ and `yt-dlp` available *inside Buzz*. Check with the same Python the skill will use. If missing, say what's missing and the install command; install only with the owner's yes, never globally without asking.
    - SEO Desk needs Python 3.10+ only. It reads the brand folder, so run `brand-bible` first if the owner hasn't. A Google PageSpeed Insights API key is optional (speed checks); it must be the owner's own, set as `PAGESPEED_API_KEY`.
    - Meta Ads Desk needs Python 3.10+ only and reads the brand folder (`brand-bible` first). Live account access is Meta's own ads connector: offer the one-line setup in `meta-audit/references/connector.md` once the agent is saved; the owner signs in with their Meta login. Without it the desk works from Ads Manager exports.
+   - Email Desk needs Python 3.10+ only and reads the brand folder (`brand-bible` first). Its first job is the owner's email voice file, built from 10 to 20 emails they actually sent (`email-sequences`). It never sends email.
    - A Gemini key is optional (no-caption videos, corpus extraction). It must be the owner's own. Never copy one from anywhere.
 
 6. **Open the draft** in the current channel:
@@ -41,7 +42,7 @@ The script is `scripts/agents.py`, relative to this skill's folder (the folder c
 
 ## Order for a fresh workspace
 
-Agent Builder → chief of staff (usually an update of an existing one) → YouTube Desk → Research Lead → SEO Desk → Meta Ads Desk.
+Agent Builder → chief of staff (usually an update of an existing one) → YouTube Desk → Research Lead → SEO Desk → Meta Ads Desk → Email Desk.
 
 ## Updates
 

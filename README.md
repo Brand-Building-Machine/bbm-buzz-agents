@@ -11,6 +11,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **YouTube Desk** | Briefs, answers and searches from YouTube | Claude or Codex |
 | **SEO Desk** | Gets you found on Google, Maps and AI answers: audits, local SEO, pages and blog posts in your voice | Claude or Codex |
 | **Meta Ads Desk** | Facebook and Instagram lead ads: audits results, writes new ads, plans changes you approve, checks tracking. Nothing spends without your yes | Claude or Codex |
+| **Email Desk** | Your emails in your voice: lead magnet and welcome sequences, sales sequences, follow-ups after calls and proposals, new-client onboarding, cold outreach. Drafts only | Claude or Codex |
 
 **Skills they use** (also usable directly):
 
@@ -30,6 +31,10 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | `meta-creative` | Turns your reviews and customer words into distinct ad concepts: hooks, copy, lead-form questions and a design brief for each |
 | `meta-launch` | Writes every change as a plan with a plan id; applies only the plan you approve, everything created paused, then confirms it |
 | `meta-tracking` | Checks leads actually arrive and Meta learns from real leads: forms, pixel, Conversions API, duplicates |
+| `email-sequences` | Lead magnet delivery, welcome and nurture, sales sequences, a 5-day email course, re-engaging a quiet list. Also builds your email voice from emails you've sent |
+| `email-followups` | Same-day call recaps, no-shows, proposals gone quiet, leads gone cold, the close-the-loop email, and how to answer a reply |
+| `email-onboarding` | After a client signs: welcome, what we need from you (safely), kickoff, first win, 30-day check-in, and a review ask timed to a real win |
+| `email-cold-outbound` | Cold outreach to prospects you choose: a true hook per prospect, a short sequence, reply handling, and the compliance basics. Never sends or scrapes |
 | `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
 
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and
@@ -65,7 +70,7 @@ In any Buzz channel, to your chief of staff or Agent Builder:
 - "Set up my agent config" → `workspace-config` (once)
 - "What agents can I install?" → `install-agent`
 - "Install YouTube Desk" → opens a draft you approve
-- "Install SEO Desk" / "Install Meta Ads Desk" → same
+- "Install SEO Desk" / "Install Meta Ads Desk" / "Install Email Desk" → same
 - "Are my agents up to date?" → offers updates as drafts
 
 ## Updates
@@ -78,10 +83,11 @@ themselves — `install-agent` offers them as drafts for you to approve.
 
 ```
 plugins/bbm-agents/
-  personas/     the six agents (templates with {{PLACEHOLDERS}})
+  personas/     the seven agents (templates with {{PLACEHOLDERS}})
   skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus,
                 seo-audit, seo-local, seo-ai-search, seo-page, seo-blog,
-                meta-audit, meta-creative, meta-launch, meta-tracking
+                meta-audit, meta-creative, meta-launch, meta-tracking,
+                email-sequences, email-followups, email-onboarding, email-cold-outbound
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```
@@ -94,8 +100,8 @@ Python 3.10+ and `yt-dlp` for the YouTube skills. A Gemini API key is optional (
 bulk corpus extraction) and must be your own. The SEO skills need only Python; a Google PageSpeed Insights
 key is optional for speed checks and must be your own. The Meta skills need only Python; live account access
 is Meta's own ads connector (`https://mcp.facebook.com/ads`, sign in with your Meta login), optional because an
-Ads Manager export works too.
+Ads Manager export works too. The email skills need only Python and never send anything.
 
 MIT licensed. The SEO skills adapt method from claude-seo and claude-blog by AgriciDaniel (MIT); the Meta skills from
-Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); see
+Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); the email skills from Anthropic's knowledge-work-plugins (Apache-2.0), GrowthEngineX, Corey Haines and George Hartley (MIT); see
 [`plugins/bbm-agents/CREDITS.md`](plugins/bbm-agents/CREDITS.md).
