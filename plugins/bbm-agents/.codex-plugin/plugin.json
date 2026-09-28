@@ -1,6 +1,6 @@
 {
   "name": "bbm-agents",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Prebuilt Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk) plus the skills to install them as owner-reviewed drafts.",
   "author": { "name": "Brand Building Machine" },
   "repository": "https://github.com/Brand-Building-Machine/bbm-buzz-agents",

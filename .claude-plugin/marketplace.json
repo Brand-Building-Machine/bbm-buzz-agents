@@ -6,7 +6,7 @@
     {
       "name": "bbm-agents",
       "description": "Prebuilt Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk) plus the skills to install them as owner-reviewed drafts.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "source": "./plugins/bbm-agents",
       "category": "productivity"
     }

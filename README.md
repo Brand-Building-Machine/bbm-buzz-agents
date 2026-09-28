@@ -14,6 +14,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 
 | Skill | What it does |
 |---|---|
+| `brand-bible` | Builds your brand bible through a short interview: company, offers, customers, voice, colours and fonts. Everything else reads it |
 | `wiki-ingest` | Files a meeting transcript or source into your knowledge base: wiki pages, meeting note, next actions, risks, strategy, decisions |
 | `wiki-ask` | Answers "what do we know / what did we decide" from your knowledge base, with citations |
 | `wiki-audit` | Health check: orphan pages, unfiled sources, dead links, contradictions, stale claims. Read-only |
@@ -66,7 +67,7 @@ themselves — `install-agent` offers them as drafts for you to approve.
 ```
 plugins/bbm-agents/
   personas/     the four agents (templates with {{PLACEHOLDERS}})
-  skills/       install-agent, workspace-config, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus
+  skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```

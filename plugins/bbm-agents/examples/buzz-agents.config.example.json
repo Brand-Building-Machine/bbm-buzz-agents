@@ -4,6 +4,7 @@
   "WORKSPACE_ROOT": "/Users/sam/Workspace",
   "WORKSPACE_MAP": "/Users/sam/Workspace/AGENTS.md",
   "PROPOSED_PATH": "/Users/sam/Workspace/proposed",
+  "BRAND_PATH": "/Users/sam/Workspace/canon/brand",
   "RAW_SOURCES_PATH": "/Users/sam/Workspace/knowledge/raw",
   "WIKI_PATH": "/Users/sam/Workspace/knowledge/wiki",
   "STATE_PATH": "/Users/sam/Workspace/state",

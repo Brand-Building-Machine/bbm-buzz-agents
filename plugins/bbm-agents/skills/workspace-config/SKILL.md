@@ -23,6 +23,7 @@ Finds the owner's workspace, proposes the values the agents need, and writes the
 | `WIKI_PATH` | Absolute path to the wiki (`entities/`, `concepts/`, `topics/`, `index.md`, `log.md`). Existing one if the workspace has it; otherwise propose `<knowledge folder>/wiki` | yes |
 | `STATE_PATH` | Absolute path to living state (`current/`, `decisions/`, `meetings/`) | yes |
 | `SCOPE_STATE_PATTERN` | Only if the workspace tracks several businesses/clients separately: the per-scope state folder with `{scope}` in it, e.g. `/…/state/projects/{scope}` | no |
+| `BRAND_PATH` | Absolute path to the brand folder (`brand-bible.md`, `voice-agent.md`, `offers.md`, `root.css`). If the owner runs several businesses, include `{business}`, e.g. `/…/canon/businesses/{business}/brand` | yes |
 | `TASK_RULES` | One sentence on the task tool, e.g. "Create tasks in ClickUp list X; every task needs a due date; assignee id N." | no — leave empty if none |
 | `BOUNDARIES_FILE` | Absolute path to the owner's written approval/autonomy rules, if they have one | no |
 

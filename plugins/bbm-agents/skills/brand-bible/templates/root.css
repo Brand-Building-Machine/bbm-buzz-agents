@@ -1,0 +1,25 @@
+/* {{BRAND_NAME}}: brand tokens. Single source of truth for colours and fonts.
+   Every page, email and graphic reads these. Values confirmed by the owner. */
+
+/* Fonts: replace with the confirmed families (Google Fonts import, or remove if self-hosted/system). */
+@import url('https://fonts.googleapis.com/css2?family={{FONT_DISPLAY_URL}}&family={{FONT_BODY_URL}}&display=swap');
+
+:root {
+  /* Colour: required */
+  --brand-primary: {{HEX_PRIMARY}};   /* main brand colour: buttons, key headings */
+  --brand-bg: {{HEX_BG}};             /* page background */
+  --brand-ink: {{HEX_INK}};           /* body and heading text */
+  --brand-muted: {{HEX_MUTED}};       /* secondary text; keep 4.5:1 contrast on --brand-bg */
+
+  /* Colour: optional (delete lines that don't apply) */
+  --brand-accent: {{HEX_ACCENT}};     /* highlights, one per screen */
+  --brand-surface: {{HEX_SURFACE}};   /* cards, panels */
+  --brand-line: {{HEX_LINE}};         /* borders, dividers */
+
+  /* Type: required */
+  --brand-font-display: '{{FONT_DISPLAY}}', system-ui, sans-serif;
+  --brand-font-body: '{{FONT_BODY}}', system-ui, sans-serif;
+
+  /* Shape */
+  --brand-radius: {{RADIUS}};         /* e.g. 8px; 999px for pill buttons */
+}
