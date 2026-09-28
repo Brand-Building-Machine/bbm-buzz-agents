@@ -1,0 +1,11 @@
+{
+  "OWNER_NAME": "Sam",
+  "CHIEF_NAME": "Sam's Chief of Staff",
+  "WORKSPACE_ROOT": "/Users/sam/Workspace",
+  "WORKSPACE_MAP": "/Users/sam/Workspace/AGENTS.md",
+  "PROPOSED_PATH": "/Users/sam/Workspace/proposed",
+  "RAW_SOURCES_PATH": "/Users/sam/Workspace/knowledge/raw",
+  "RESEARCH_RUNS_PATH": "/Users/sam/Workspace/research/runs",
+  "TASK_RULES": "Create tasks in ClickUp; every task needs a due date.",
+  "BOUNDARIES_FILE": ""
+}

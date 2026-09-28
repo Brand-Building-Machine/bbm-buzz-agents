@@ -1,0 +1,7 @@
+{
+  "name": "bbm-buzz-agents",
+  "owner": { "name": "Brand Building Machine" },
+  "plugins": [
+    { "name": "bbm-agents", "source": "./plugins/bbm-agents" }
+  ]
+}

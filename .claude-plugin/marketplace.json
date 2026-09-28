@@ -1,0 +1,14 @@
+{
+  "name": "bbm-buzz-agents",
+  "owner": { "name": "Brand Building Machine" },
+  "metadata": { "description": "Prebuilt Buzz agents and the skills they run, from Brand Building Machine." },
+  "plugins": [
+    {
+      "name": "bbm-agents",
+      "description": "Prebuilt Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk) plus the skills to install them as owner-reviewed drafts.",
+      "version": "0.1.0",
+      "source": "./plugins/bbm-agents",
+      "category": "productivity"
+    }
+  ]
+}
