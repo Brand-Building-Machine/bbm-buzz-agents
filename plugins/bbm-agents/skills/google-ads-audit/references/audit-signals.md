@@ -22,7 +22,7 @@ What `gads.py audit` checks, the thresholds, and how to judge the edge cases. Sc
 "Search campaigns" below means enabled Search campaigns. "Per month" figures scale the fetched period to 30.4 days.
 
 ## 1 Account & settings
-- **1.1 Shared negative list on Search campaigns.** PASS 80%+ covered, WARN some, FAIL none.
+- **1.1 Shared negative list on non-brand Search campaigns.** PASS 80%+ covered, WARN some, FAIL none. Brand campaigns are exempt (a generic list can block brand searches).
 - **1.2 Auto-tagging on.** FAIL if off: Analytics and offline imports can't tie leads to clicks.
 - **1.3 Time zone and currency** (info). Can't be changed later.
 - **1.4 What is live now** (info). Share of the period's spend in campaigns now paused. Recommend for the live account.

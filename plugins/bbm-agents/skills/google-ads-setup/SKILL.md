@@ -16,7 +16,7 @@ Uses `gads.py` from the `google-ads-audit` skill (the folder next to this one): 
 3. Account. Keyword Planner needs a Google Ads account ID, even an empty one.
    - `gads.py accounts` lists what the owner's Composio login reaches (`--manager <id>` if they have a manager/MCC account; Composio hides that ID in its output).
    - `gads.py use <customer id>` saves the choice. Always confirm the account name with the owner before saving. Never guess between accounts.
-   - No Composio or no `googleads` link: tell the owner the one-time setup (install the Composio CLI, `composio login`, `composio link googleads`) and wait. No Google Ads account at all: they create one at ads.google.com (skip the guided campaign; switch to Expert mode), then link it.
+   - No Composio or no `googleads` link: walk the owner through `references/connect-composio.md` in the `google-ads-audit` skill, one step at a time, and wait. No Google Ads account at all: they create one at ads.google.com (skip the guided campaign; switch to Expert mode), then link it.
 4. If the account already has history, offer to run `google-ads-audit` first. A plan built on what already worked beats one built from scratch.
 
 ## Step 1: Discovery interview

@@ -171,12 +171,22 @@ def clean_id(value):
 _version = [os.environ.get("GOOGLE_ADS_API_VERSION")]
 
 
-def composio_bin():
+WSL_SHIM = 'export PATH="$HOME/.local/bin:$HOME/.composio:$PATH"; exec composio "$@"'
+
+
+def composio_cmd():
+    """The command prefix that runs composio. On Windows the CLI lives inside WSL."""
     exe = os.environ.get("COMPOSIO_BIN") or shutil.which("composio")
-    if not exe:
-        die("The composio CLI isn't installed or isn't on PATH. Install it (composio.dev), run "
-            "`composio login`, then `composio link googleads`.")
-    return exe
+    if exe:
+        return [exe]
+    if os.name == "nt" and shutil.which("wsl"):
+        return ["wsl", "-e", "sh", "-c", WSL_SHIM, "sh"]
+    die("The composio CLI isn't installed or isn't on PATH. Setup: references/connect-composio.md in the "
+        "google-ads-audit skill (install, `composio login`, `composio link googleads`).")
+
+
+def composio_bin():
+    return composio_cmd()[0]
 
 
 TRANSIENT = ("RESOURCE_EXHAUSTED", "UNAVAILABLE", "INTERNAL", "DEADLINE_EXCEEDED", "429", "503", "took over")
@@ -194,21 +204,21 @@ def api(method, path, body=None, login=None, tries=3):
 
 
 def _api_once(method, path, body=None, login=None):
-    exe = composio_bin()
+    cmd = composio_cmd()
     versions = [_version[0]] if _version[0] else API_VERSIONS
     last = ""
     for ver in versions:
-        args = [exe, "proxy", f"{API_HOST}/{ver}/{path}", "--toolkit", "googleads", "-X", method]
-        if body is not None:
-            args += ["-H", "content-type: application/json", "-d", json.dumps(body)]
+        args = cmd + ["proxy", f"{API_HOST}/{ver}/{path}", "--toolkit", "googleads", "-X", method]
+        if body is not None:   # body over stdin: no shell or WSL quoting of JSON
+            args += ["-H", "content-type: application/json", "-d", "-"]
         if login:
             args += ["-H", f"login-customer-id: {login}"]
         if os.environ.get("GOOGLE_ADS_COMPOSIO_ACCOUNT"):
             args += ["--account", os.environ["GOOGLE_ADS_COMPOSIO_ACCOUNT"]]
         try:
-            # stdin closed: composio reads stdin when it isn't a terminal and would wait forever.
+            # Always give stdin: composio reads it when it isn't a terminal and would otherwise wait forever.
             p = subprocess.run(args, capture_output=True, text=True, encoding="utf-8", errors="replace",
-                               stdin=subprocess.DEVNULL, timeout=120)
+                               input=json.dumps(body) if body is not None else "", timeout=120)
         except subprocess.TimeoutExpired:
             raise ApiError("composio took over 2 minutes to answer; try again, or check `composio whoami`.")
         out = (p.stdout or "").strip()
@@ -311,7 +321,10 @@ def cmd_paths(a):
             print(f"  {'ok     ' if (bd / f).exists() else 'missing'} {f}")
     bp = sorted(out.glob("*blueprint*.json"))
     print(f"blueprints: {', '.join(p.name for p in bp) if bp else 'none yet'}")
-    print(f"composio: {shutil.which('composio') or os.environ.get('COMPOSIO_BIN') or 'NOT FOUND'}")
+    found = os.environ.get("COMPOSIO_BIN") or shutil.which("composio")
+    if not found and os.name == "nt" and shutil.which("wsl"):
+        found = "inside WSL (wsl composio)"
+    print(f"composio: {found or 'NOT FOUND (see references/connect-composio.md)'}")
 
 
 def account_info(cid, login=None):
@@ -1087,12 +1100,18 @@ class Audit:
         if self.has("shared_sets", "campaign_shared_sets") and self.search:
             neg = {g(r, "sharedSet", "id") for r in self.d["shared_sets"] if g(r, "sharedSet", "type") == "NEGATIVE_KEYWORDS"}
             covered = {g(r, "campaign", "id") for r in self.d["campaign_shared_sets"] if g(r, "sharedSet", "id") in neg}
-            n = sum(1 for c in self.search if c["id"] in covered)
-            share = n / len(self.search)
-            st = "PASS" if share >= 0.8 else "WARN" if n else "FAIL"
-            self.add(1, "1.1", "Shared negative keyword list on Search campaigns", st,
-                     f"{len(neg)} shared negative list(s); applied to {n} of {len(self.search)} enabled Search campaigns.",
-                     "Create one shared negative list and apply it to every Search campaign.")
+            # Brand campaigns are exempt: a generic list can block brand searches.
+            need = [c for c in self.search if not ("brand" in c["name"].lower() and "non" not in c["name"].lower())]
+            if not need:
+                self.add(1, "1.1", "Shared negative keyword list on Search campaigns", "NA",
+                         "Only brand Search campaigns are live; they don't need the shared list.")
+            else:
+                n = sum(1 for c in need if c["id"] in covered)
+                share = n / len(need)
+                st = "PASS" if share >= 0.8 else "WARN" if n else "FAIL"
+                self.add(1, "1.1", "Shared negative keyword list on Search campaigns", st,
+                         f"{len(neg)} shared negative list(s); applied to {n} of {len(need)} enabled non-brand Search campaigns.",
+                         "Create one shared negative list and apply it to every non-brand Search campaign.")
         elif not self.search:
             self.add(1, "1.1", "Shared negative keyword list on Search campaigns", "NA", "No enabled Search campaigns.")
         else:

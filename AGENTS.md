@@ -21,7 +21,7 @@ plugins/bbm-agents/
   examples/      buzz-agents.config.example.json
 ```
 
-Shipped: `install-agent`, `workspace-config`, `brand-bible`, `wiki-ingest`, `wiki-ask`, `wiki-audit`, `yt-intel`, `yt-ask`, `yt-search`, `yt-corpus`, `seo-audit`, `seo-local`, `seo-ai-search`, `seo-page`, `seo-blog` (the four others call `seo-audit/scripts/seo.py`), `meta-audit`, `meta-creative`, `meta-launch`, `meta-tracking` (all call `meta-audit/scripts/meta.py`), `email-sequences`, `email-followups`, `email-onboarding`, `email-cold-outbound` (all call `email-sequences/scripts/emailkit.py`; drafts in one shared format, `email-sequences/references/draft-format.md`). Personas: chief-of-staff, agent-builder, research-lead, youtube-desk, seo-desk, meta-ads-desk, email-desk. Third-party method credits: `plugins/bbm-agents/CREDITS.md`.
+Shipped: `install-agent`, `workspace-config`, `brand-bible`, `wiki-ingest`, `wiki-ask`, `wiki-audit`, `yt-intel`, `yt-ask`, `yt-search`, `yt-corpus`, `seo-audit`, `seo-local`, `seo-ai-search`, `seo-page`, `seo-blog` (the four others call `seo-audit/scripts/seo.py`), `meta-audit`, `meta-creative`, `meta-launch`, `meta-tracking` (all call `meta-audit/scripts/meta.py`), `email-sequences`, `email-followups`, `email-onboarding`, `email-cold-outbound` (all call `email-sequences/scripts/emailkit.py`; drafts in one shared format, `email-sequences/references/draft-format.md`). `google-ads-setup`, `google-ads-audit` (both call `google-ads-audit/scripts/gads.py`, read-only through the `composio` CLI). Personas: chief-of-staff, agent-builder, research-lead, youtube-desk, seo-desk, meta-ads-desk, email-desk, google-ads-desk. Third-party method credits: `plugins/bbm-agents/CREDITS.md`.
 
 ## Rules for every skill
 

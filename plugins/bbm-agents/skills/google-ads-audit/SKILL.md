@@ -13,7 +13,7 @@ The script is `scripts/gads.py`, relative to this skill's folder. Run it with `p
 
 1. `gads.py paths [--business <name>]`: reports folder, chosen account, brand files, whether `composio` is found.
 2. **Pick the account.** If none is chosen, `gads.py accounts` (add `--manager <id>` when the owner has a manager/MCC account; Composio hides that ID in its output), confirm the account **by name** with the owner, then `gads.py use <customer id>` (`--login <manager id>` for accounts reached through a manager). Never guess between accounts.
-3. No `composio`, or it says Google Ads isn't linked: tell the owner the one-time setup (install the Composio CLI, `composio login`, `composio link googleads` with the Google login that has access to the ads account) and wait. If they can't, use the export fallback in `references/paste-exports.md`.
+3. No `composio`, or it says Google Ads isn't linked: walk the owner through `references/connect-composio.md` one step at a time (Mac, or WSL on Windows) and wait. If they can't, use the export fallback in `references/paste-exports.md`.
 4. Read `brand-bible.md` / `offers.md` if present: what they sell and where tells you which search terms are junk.
 
 ## Run it

@@ -34,7 +34,7 @@ Keywords use Google's own notation as strings: `"[exact]"`, `"\"phrase\""` (quot
     ]
   },
 
-  "geo": {"type": "PRESENCE", "locations": ["Denver, CO (1014221)", "Aurora, CO (1014222)"], "exclude": []},
+  "geo": {"type": "PRESENCE", "locations": ["Denver, CO (<id from gads.py geo>)", "Aurora, CO (<id from gads.py geo>)"], "exclude": []},
   "schedule": "Mon-Fri 7am-6pm, Sat 8am-12pm (when calls are answered)",
 
   "negatives": {

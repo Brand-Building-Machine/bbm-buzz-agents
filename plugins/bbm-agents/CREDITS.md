@@ -233,3 +233,54 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+# Google Ads Desk
+
+The Google Ads skills (`google-ads-setup`, `google-ads-audit`) and the Google Ads Desk persona adapt method from the projects below. The text and code here are rewritten, not copied; the method is theirs.
+
+- **google-ads-audit** by Optmyzr, https://github.com/optmyzr-skills/google-ads-audit (Apache License 2.0): the 14 audit categories, their weights, the pass / warn / fail signal thresholds, A/B/C grading, the wasted-spend estimate, top-5 ranking and the export fallback in `google-ads-audit`. License: https://www.apache.org/licenses/LICENSE-2.0. Their NOTICE follows.
+- **claude-ads** by AgriciDaniel, https://github.com/AgriciDaniel/claude-ads (MIT): the Google audit control list, GAQL query notes (keyword de-duplication, status scoping, never treating a failed query as empty data) and the rule that negatives come only from reviewed search terms.
+- **marketingskills** by Corey Haines, https://github.com/coreyhaines31/marketingskills (MIT, notice above): the intent ladder, account structure and consolidation rule, match-type progression, negative-keyword mechanics, bidding by conversion volume and the weekly search-terms review in `google-ads-setup`.
+
+## google-ads-audit (Optmyzr) NOTICE
+
+```
+Google Ads Audit
+Copyright 2026 Optmyzr Inc.
+
+This product includes the PPC audit methodology developed by Optmyzr
+(https://www.optmyzr.com), used here under Apache License 2.0.
+
+The audit covers 14 categories curated from Optmyzr's broader audit IP
+and the broader PPC community's best practices. The full Optmyzr audit
+covers additional proprietary signals available via the Optmyzr platform
+and the Optmyzr MCP server.
+
+Powered by Optmyzr — https://www.optmyzr.com
+```
+
+## claude-ads
+
+```
+MIT License
+
+Copyright (c) 2026 agricidaniel
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

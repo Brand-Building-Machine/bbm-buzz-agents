@@ -12,6 +12,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **SEO Desk** | Gets you found on Google, Maps and AI answers: audits, local SEO, pages and blog posts in your voice | Claude or Codex |
 | **Meta Ads Desk** | Facebook and Instagram lead ads: audits results, writes new ads, plans changes you approve, checks tracking. Nothing spends without your yes | Claude or Codex |
 | **Email Desk** | Your emails in your voice: lead magnet and welcome sequences, sales sequences, follow-ups after calls and proposals, new-client onboarding, cold outreach. Drafts only | Claude or Codex |
+| **Google Ads Desk** | Plans your Google Ads like an agency onboarding (keywords from Google's own planner, structure, budget, tracking, ads) and audits what's running. Read-only; never changes the account | Claude or Codex |
 
 **Skills they use** (also usable directly):
 
@@ -35,6 +36,8 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | `email-followups` | Same-day call recaps, no-shows, proposals gone quiet, leads gone cold, the close-the-loop email, and how to answer a reply |
 | `email-onboarding` | After a client signs: welcome, what we need from you (safely), kickoff, first win, 30-day check-in, and a review ask timed to a real win |
 | `email-cold-outbound` | Cold outreach to prospects you choose: a true hook per prospect, a short sequence, reply handling, and the compliance basics. Never sends or scrapes |
+| `google-ads-setup` | Agency-style onboarding interview, a search-demand and budget check, keyword research with Google Keyword Planner, then a checked campaign blueprint and a step-by-step build sheet |
+| `google-ads-audit` | Reads your Google Ads account (read-only, through your Composio connection) and scores 14 areas: tracking, structure, budgets, bidding, keywords, Quality Score, wasted search terms, ads, assets, landing pages. Top fixes and a 7-day plan |
 | `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
 
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and
@@ -83,11 +86,12 @@ themselves — `install-agent` offers them as drafts for you to approve.
 
 ```
 plugins/bbm-agents/
-  personas/     the seven agents (templates with {{PLACEHOLDERS}})
+  personas/     the eight agents (templates with {{PLACEHOLDERS}})
   skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus,
                 seo-audit, seo-local, seo-ai-search, seo-page, seo-blog,
                 meta-audit, meta-creative, meta-launch, meta-tracking,
-                email-sequences, email-followups, email-onboarding, email-cold-outbound
+                email-sequences, email-followups, email-onboarding, email-cold-outbound,
+                google-ads-setup, google-ads-audit
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```
@@ -102,6 +106,9 @@ key is optional for speed checks and must be your own. The Meta skills need only
 is Meta's own ads connector (`https://mcp.facebook.com/ads`, sign in with your Meta login), optional because an
 Ads Manager export works too. The email skills need only Python and never send anything.
 
+The Google Ads skills need only Python and the free Composio CLI (`composio link googleads`; on Windows it runs inside
+WSL). Access is read-only. Without Composio the audit works from Google Ads exports.
+
 MIT licensed. The SEO skills adapt method from claude-seo and claude-blog by AgriciDaniel (MIT); the Meta skills from
-Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); the email skills from Anthropic's knowledge-work-plugins (Apache-2.0), GrowthEngineX, Corey Haines and George Hartley (MIT); see
+Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); the email skills from Anthropic's knowledge-work-plugins (Apache-2.0), GrowthEngineX, Corey Haines and George Hartley (MIT); the Google Ads skills from Optmyzr (Apache-2.0), AgriciDaniel's claude-ads and Corey Haines (MIT); see
 [`plugins/bbm-agents/CREDITS.md`](plugins/bbm-agents/CREDITS.md).

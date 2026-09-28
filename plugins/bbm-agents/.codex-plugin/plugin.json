@@ -1,11 +1,11 @@
 {
   "name": "bbm-agents",
-  "version": "0.6.0",
-  "description": "Prebuilt Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk, SEO Desk, Meta Ads Desk, Email Desk) plus the skills to install them as owner-reviewed drafts.",
+  "version": "0.7.0",
+  "description": "Prebuilt Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk, SEO Desk, Meta Ads Desk, Email Desk, Google Ads Desk) plus the skills to install them as owner-reviewed drafts.",
   "author": { "name": "Brand Building Machine" },
   "repository": "https://github.com/Brand-Building-Machine/bbm-buzz-agents",
   "license": "MIT",
-  "keywords": ["buzz", "agents", "research", "youtube", "seo", "meta-ads", "facebook-ads", "email"],
+  "keywords": ["buzz", "agents", "research", "youtube", "seo", "meta-ads", "facebook-ads", "email", "google-ads"],
   "skills": "./skills/",
   "interface": {
     "displayName": "BBM Agents",

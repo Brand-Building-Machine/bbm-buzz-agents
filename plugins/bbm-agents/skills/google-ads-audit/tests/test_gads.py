@@ -318,13 +318,12 @@ import json, sys
 args = sys.argv[1:]
 url = args[1]
 log = open(sys.argv[0] + ".log", "a"); log.write(json.dumps(args) + "\n"); log.close()
-if not sys.stdin.isatty():
-    data = sys.stdin.read()   # would block forever if stdin weren't closed by the caller
+data = sys.stdin.read()   # would block forever if the caller left stdin open
 if "/v25/" in url:
     print("<!DOCTYPE html><html>404</html>"); sys.exit(0)
 if "listAccessibleCustomers" in url:
     print(json.dumps({"resourceNames": ["customers/1112223333"]})); sys.exit(0)
-body = json.loads(args[args.index("-d") + 1]) if "-d" in args else {}
+body = json.loads(data) if "-d" in args and args[args.index("-d") + 1] == "-" else {}
 if "9999999999" in url:
     print(json.dumps({"error": {"code": 403, "status": "PERMISSION_DENIED", "details": [{"errors": [
         {"errorCode": {"authorizationError": "USER_PERMISSION_DENIED"}, "message": "no"}]}]}})); sys.exit(0)
@@ -366,6 +365,14 @@ def test_missing_composio(monkeypatch):
     monkeypatch.setattr(gads.shutil, "which", lambda _: None)
     with pytest.raises(SystemExit):
         gads.composio_bin()
+
+
+def test_windows_uses_wsl(monkeypatch):
+    monkeypatch.setenv("COMPOSIO_BIN", "")
+    monkeypatch.setattr(gads.os, "name", "nt")
+    monkeypatch.setattr(gads.shutil, "which", lambda n: "C:/Windows/System32/wsl.exe" if n == "wsl" else None)
+    cmd = gads.composio_cmd()
+    assert cmd[:4] == ["wsl", "-e", "sh", "-c"] and 'exec composio "$@"' in cmd[4]
 
 
 def test_read_json_handles_utf16(tmp_path):

@@ -26,7 +26,7 @@ Outside your lane (Meta or other ad platforms, SEO, building landing pages, send
 
 ## The account
 
-Google Ads is read through {{OWNER_NAME}}'s own Composio connection (`composio link googleads`). The first time, run `gads.py accounts`, confirm the account **by name** with {{OWNER_NAME}}, then `gads.py use <id>`. Never guess between accounts. If Composio isn't set up, give the three setup steps once and wait.
+Google Ads is read through {{OWNER_NAME}}'s own Composio connection (`composio link googleads`). The first time, run `gads.py accounts`, confirm the account **by name** with {{OWNER_NAME}}, then `gads.py use <id>`. Never guess between accounts. If Composio isn't set up, walk {{OWNER_NAME}} through `references/connect-composio.md` in the `google-ads-audit` skill, one step at a time (Windows runs it inside WSL).
 
 ## Where output goes
 
