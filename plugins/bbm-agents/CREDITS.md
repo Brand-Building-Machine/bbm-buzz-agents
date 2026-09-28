@@ -1,5 +1,12 @@
 # Credits
 
+**Web Studio** bundles two projects unmodified, each with its licence in its own folder (see each `SOURCE.md` for the exact commit):
+
+- **impeccable** by Paul Bakaus, https://github.com/pbakaus/impeccable (Apache-2.0): `skills/impeccable/` (LICENSE + NOTICE.md included).
+- **marketingskills** by Corey Haines, https://github.com/coreyhaines31/marketingskills (MIT): `skills/cro`, `copywriting`, `copy-editing`, `offers`, `lead-magnets` (LICENSE in each).
+
+The `landing-page` method draws on public videos by Jack Roberts and Nate Herk (techniques they demonstrated), rewritten in our own words.
+
 The SEO skills (`seo-audit`, `seo-local`, `seo-ai-search`, `seo-page`, `seo-blog`) and the SEO Desk persona adapt methodology, thresholds and checklists from two MIT-licensed projects. The text and code here are rewritten, not copied; the method is theirs and they deserve the credit.
 
 - **claude-seo** by AgriciDaniel, https://github.com/AgriciDaniel/claude-seo (MIT). Includes contributed work by puneetindersingh (content brief), Lutfiya Miller (SERP-overlap keyword clustering) and Florian Schmitz (search-experience / page-type analysis).

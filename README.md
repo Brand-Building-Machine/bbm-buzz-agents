@@ -12,6 +12,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **SEO Desk** | Gets you found on Google, Maps and AI answers: audits, local SEO, pages and blog posts in your voice | Claude or Codex |
 | **Meta Ads Desk** | Facebook and Instagram lead ads: audits results, writes new ads, plans changes you approve, checks tracking. Nothing spends without your yes | Claude or Codex |
 | **Email Desk** | Your emails in your voice: lead magnet and welcome sequences, sales sequences, follow-ups after calls and proposals, new-client onboarding, cold outreach. Drafts only | Claude or Codex |
+| **Web Studio** | Landing pages and small websites that convert and don't look AI-made: brief, visible directions to pick from, hero first, fresh-eyes critics, QA gate. You approve before anything goes live | Claude |
 | **Google Ads Desk** | Plans your Google Ads like an agency onboarding (keywords from Google's own planner, structure, budget, tracking, ads) and audits what's running. Read-only; never changes the account | Claude or Codex |
 
 **Skills they use** (also usable directly):
@@ -38,6 +39,10 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | `email-cold-outbound` | Cold outreach to prospects you choose: a true hook per prospect, a short sequence, reply handling, and the compliance basics. Never sends or scrapes |
 | `google-ads-setup` | Agency-style onboarding interview, a search-demand and budget check, keyword research with Google Keyword Planner, then a checked campaign blueprint and a step-by-step build sheet |
 | `google-ads-audit` | Reads your Google Ads account (read-only, through your Composio connection) and scores 14 areas: tracking, structure, budgets, bidding, keywords, Quality Score, wasted search terms, ads, assets, landing pages. Top fixes and a 7-day plan |
+| `landing-page` | Web Studio's method: page brief, offer and CTA, reference directions, design rules, real assets, hero first, full page, copy pass, critics, QA, preview approval |
+| `page-qa` | Pre-launch gate for a page: placeholders, a working lead path, overflow at 4 screen widths, labels, basics, screenshots |
+| `impeccable` | Design craft (by Paul Bakaus, Apache-2.0): shape, critique, audit, polish. Your brand always wins over its defaults |
+| `cro` · `copywriting` · `copy-editing` · `offers` · `lead-magnets` | Conversion and copy (from Corey Haines' marketingskills, MIT). They read your brand folder as their context |
 | `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
 
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and

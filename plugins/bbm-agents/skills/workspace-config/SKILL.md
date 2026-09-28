@@ -24,6 +24,7 @@ Finds the owner's workspace, proposes the values the agents need, and writes the
 | `STATE_PATH` | Absolute path to living state (`current/`, `decisions/`, `meetings/`) | yes |
 | `SCOPE_STATE_PATTERN` | Only if the workspace tracks several businesses/clients separately: the per-scope state folder with `{scope}` in it, e.g. `/…/state/projects/{scope}` | no |
 | `BRAND_PATH` | Absolute path to the brand folder (`brand-bible.md`, `voice-agent.md`, `offers.md`, `root.css`). If the owner runs several businesses, include `{business}`, e.g. `/…/canon/businesses/{business}/brand` | yes |
+| `SITES_PATH` | Absolute path where Web Studio builds landing pages and sites, one folder per page (propose `<root>/sites` if the workspace has nowhere obvious) | only for Web Studio |
 | `TASK_RULES` | One sentence on the task tool, e.g. "Create tasks in ClickUp list X; every task needs a due date; assignee id N." | no — leave empty if none |
 | `BOUNDARIES_FILE` | Absolute path to the owner's written approval/autonomy rules, if they have one | no |
 
