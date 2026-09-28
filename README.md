@@ -9,6 +9,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **Agent Builder** | Installs prebuilt agents; designs new ones only when nothing fits | Claude |
 | **Research Lead** | Commissioned research with a four-subagent team, sourced and fact-checked | Claude |
 | **YouTube Desk** | Briefs, answers and searches from YouTube | Claude or Codex |
+| **SEO Desk** | Gets you found on Google, Maps and AI answers: audits, local SEO, pages and blog posts in your voice | Claude or Codex |
 
 **Skills they use** (also usable directly):
 
@@ -19,6 +20,11 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | `wiki-ask` | Answers "what do we know / what did we decide" from your knowledge base, with citations |
 | `wiki-audit` | Health check: orphan pages, unfiled sources, dead links, contradictions, stale claims. Read-only |
 | `yt-intel` · `yt-ask` · `yt-search` · `yt-corpus` | YouTube briefs, answers, search, and bulk transcripts |
+| `seo-audit` | Audits your site: indexing, robots.txt, sitemap, broken links, titles, schema, images, speed, content quality. Scored, prioritized fixes |
+| `seo-local` | Google Business Profile, reviews, name/address/phone consistency, local schema, listings |
+| `seo-ai-search` | Whether ChatGPT, Perplexity, Claude and Google AI can find and quote you, and what to fix |
+| `seo-page` | Writes or fixes a page to rank for a keyword, after checking what Google already ranks |
+| `seo-blog` | Plans topics and a calendar, writes sourced, fact-checked posts, refreshes posts losing traffic |
 | `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
 
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and
@@ -54,6 +60,7 @@ In any Buzz channel, to your chief of staff or Agent Builder:
 - "Set up my agent config" → `workspace-config` (once)
 - "What agents can I install?" → `install-agent`
 - "Install YouTube Desk" → opens a draft you approve
+- "Install SEO Desk" → same
 - "Are my agents up to date?" → offers updates as drafts
 
 ## Updates
@@ -66,8 +73,9 @@ themselves — `install-agent` offers them as drafts for you to approve.
 
 ```
 plugins/bbm-agents/
-  personas/     the four agents (templates with {{PLACEHOLDERS}})
-  skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus
+  personas/     the five agents (templates with {{PLACEHOLDERS}})
+  skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus,
+                seo-audit, seo-local, seo-ai-search, seo-page, seo-blog
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```
@@ -77,6 +85,8 @@ No client data, credentials or machine paths live in this repo. Yours stay in yo
 ## Requirements
 
 Python 3.10+ and `yt-dlp` for the YouTube skills. A Gemini API key is optional (videos without captions,
-bulk corpus extraction) and must be your own.
+bulk corpus extraction) and must be your own. The SEO skills need only Python; a Google PageSpeed Insights
+key is optional for speed checks and must be your own.
 
-MIT licensed.
+MIT licensed. The SEO skills adapt method from claude-seo and claude-blog by AgriciDaniel (MIT); see
+[`plugins/bbm-agents/CREDITS.md`](plugins/bbm-agents/CREDITS.md).

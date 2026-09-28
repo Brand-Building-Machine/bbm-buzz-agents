@@ -21,7 +21,7 @@ plugins/bbm-agents/
   examples/      buzz-agents.config.example.json
 ```
 
-Shipped: `install-agent`, `workspace-config`, `brand-bible`, `wiki-ingest`, `wiki-ask`, `wiki-audit`, `yt-intel`, `yt-ask`, `yt-search`, `yt-corpus`. Personas: chief-of-staff, agent-builder, research-lead, youtube-desk.
+Shipped: `install-agent`, `workspace-config`, `brand-bible`, `wiki-ingest`, `wiki-ask`, `wiki-audit`, `yt-intel`, `yt-ask`, `yt-search`, `yt-corpus`, `seo-audit`, `seo-local`, `seo-ai-search`, `seo-page`, `seo-blog` (the four others call `seo-audit/scripts/seo.py`). Personas: chief-of-staff, agent-builder, research-lead, youtube-desk, seo-desk. Third-party method credits: `plugins/bbm-agents/CREDITS.md`.
 
 ## Rules for every skill
 
