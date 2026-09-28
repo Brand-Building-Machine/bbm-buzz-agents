@@ -172,3 +172,64 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+# Email Desk
+
+The email skills (`email-sequences`, `email-followups`, `email-onboarding`, `email-cold-outbound`) and the Email Desk persona adapt method from the projects below. The text and code here are rewritten, not copied; the method is theirs. The service-business follow-up, no-show, proposal and client-onboarding playbooks are Brand Building Machine's own.
+
+- **knowledge-work-plugins** by Anthropic, https://github.com/anthropics/knowledge-work-plugins (Apache License 2.0): from `outreach-composer` and `email-sequence`, the voice-from-sent-mail step, the hook ranking and "say it's cold" rule, stop-on-any-reply, the 48-hour and touch-cap limits, the post-meeting recap, per-batch approval, and the per-email spec with exit rules. License: https://www.apache.org/licenses/LICENSE-2.0
+- **coldoutboundskills** by GrowthEngineX, https://github.com/growthenginenowoslawski/coldoutboundskills (MIT): the cold copy rules (them-to-me ratio, a reply in five words, first-line strategies, the constraint box), the Day 0/3/7/11 sequence with same-thread then new-thread, stand-alone follow-ups, reply buckets, the score and the three-pass cut.
+- **marketingskills** by Corey Haines, https://github.com/coreyhaines31/marketingskills (MIT, notice above): the nurture arc, cold-email principles and structures, angle rotation and the breakup email, and new-customer and review-timing rules.
+- **email-marketing-bible** by George Hartley, https://github.com/CosmoBlk/email-marketing-bible (MIT): the reply ask plus one segmenting question in the first email, judging by replies and clicks rather than opens, the anti-AI-writing sweep, and send gates.
+
+## coldoutboundskills
+
+```
+MIT License
+
+Copyright (c) 2026 GrowthEngineX
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## email-marketing-bible
+
+```
+MIT License
+
+Copyright (c) 2026 George Hartley
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
