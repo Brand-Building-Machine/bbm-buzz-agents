@@ -13,6 +13,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **Meta Ads Desk** | Facebook and Instagram lead ads: audits results, writes new ads, plans changes you approve, checks tracking. Nothing spends without your yes | Claude or Codex |
 | **Email Desk** | Your emails in your voice: lead magnet and welcome sequences, sales sequences, follow-ups after calls and proposals, new-client onboarding, cold outreach. Drafts only | Claude or Codex |
 | **Web Studio** | Landing pages and small websites that convert and don't look AI-made: brief, visible directions to pick from, hero first, fresh-eyes critics, QA gate. You approve before anything goes live | Claude |
+| **LinkedIn Desk** | LinkedIn posts, carousels and images in your voice, built on your real stories and numbers, plus a weekly plan. Slides designed with your brand for free, or made by an image model (Fal or Higgsfield) on your own account. Drafts only; never posts | Claude or Codex |
 | **Google Ads Desk** | Plans your Google Ads like an agency onboarding (keywords from Google's own planner, structure, budget, tracking, ads) and audits what's running. Read-only; never changes the account | Claude or Codex |
 
 **Skills they use** (also usable directly):
@@ -43,6 +44,12 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | `page-qa` | Pre-launch gate for a page: placeholders, a working lead path, overflow at 4 screen widths, labels, basics, screenshots |
 | `impeccable` | Design craft (by Paul Bakaus, Apache-2.0): shape, critique, audit, polish. Your brand always wins over its defaults |
 | `cro` · `copywriting` · `copy-editing` · `offers` · `lead-magnets` | Conversion and copy (from Corey Haines' marketingskills, MIT). They read your brand folder as their context |
+| `linkedin-post` | Writes a LinkedIn post from your real stories: one proven formula, two first lines to pick from, an edit pass that strips AI tells, and a copy check |
+| `linkedin-carousel` | Turns a topic or post into a carousel (PDF document post): slide brief you approve, then built in HTML with your brand (free), by an image model, or both, and checked slide by slide |
+| `linkedin-image` | One graphic for a post: framework, big number or quote card in your brand (free), or an illustration from an image model |
+| `linkedin-plan` | Sets up your LinkedIn profile, then plans a week of posts (or a bank of ideas), each tied to a real story |
+| `linkedin-stories` | Interviews you and keeps your story bank: numbers, stories, opinions, mistakes and your own writing. Every LinkedIn skill reads it |
+| `social-visuals` | The engine: renders slides to PNG and PDF with your own Chrome or Edge, and generates images on Fal or Higgsfield with your own key, only after your yes |
 | `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
 
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and
@@ -91,12 +98,13 @@ themselves — `install-agent` offers them as drafts for you to approve.
 
 ```
 plugins/bbm-agents/
-  personas/     the eight agents (templates with {{PLACEHOLDERS}})
+  personas/     the ten agents (templates with {{PLACEHOLDERS}})
   skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus,
                 seo-audit, seo-local, seo-ai-search, seo-page, seo-blog,
                 meta-audit, meta-creative, meta-launch, meta-tracking,
                 email-sequences, email-followups, email-onboarding, email-cold-outbound,
-                google-ads-setup, google-ads-audit
+                google-ads-setup, google-ads-audit,
+                linkedin-post, linkedin-carousel, linkedin-image, linkedin-plan, linkedin-stories, social-visuals
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```
@@ -114,6 +122,10 @@ Ads Manager export works too. The email skills need only Python and never send a
 The Google Ads skills need only Python and the free Composio CLI (`composio link googleads`; on Windows it runs inside
 WSL). Access is read-only. Without Composio the audit works from Google Ads exports.
 
+The LinkedIn skills need only Python. Designed slides and images render with your own Google Chrome or Microsoft
+Edge (free). Image-model visuals are optional and use your own Fal or Higgsfield key, kept in `~/.bbm-agents.env`
+on your computer; nothing is generated (or charged) without your yes. Nothing is ever posted to LinkedIn.
+
 MIT licensed. The SEO skills adapt method from claude-seo and claude-blog by AgriciDaniel (MIT); the Meta skills from
-Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); the email skills from Anthropic's knowledge-work-plugins (Apache-2.0), GrowthEngineX, Corey Haines and George Hartley (MIT); the Google Ads skills from Optmyzr (Apache-2.0), AgriciDaniel's claude-ads and Corey Haines (MIT); see
+Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); the email skills from Anthropic's knowledge-work-plugins (Apache-2.0), GrowthEngineX, Corey Haines and George Hartley (MIT); the Google Ads skills from Optmyzr (Apache-2.0), AgriciDaniel's claude-ads and Corey Haines (MIT); the LinkedIn skills from Sergey Bulaev, Charlie Hills and Corey Haines (MIT); see
 [`plugins/bbm-agents/CREDITS.md`](plugins/bbm-agents/CREDITS.md).

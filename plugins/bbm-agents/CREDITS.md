@@ -291,3 +291,63 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+# LinkedIn Desk
+
+The LinkedIn skills (`linkedin-post`, `linkedin-carousel`, `linkedin-image`, `linkedin-plan`, `linkedin-stories`) and `social-visuals` adapt method from three MIT-licensed projects. The text and code here are rewritten, not copied.
+
+- **linkedin-skills** by Sergey Bulaev, https://github.com/sergebulaev/linkedin-skills (MIT): the post formulas and the pick-by-engagement-goal split, the four-pass humanizer (paragraph-density scoring, reveal bridges, the over-correction check), the density rule, the story-bank interviewer and the pillar planning in `linkedin-post`, `linkedin-plan` and `linkedin-stories`.
+- **social-media-skills** by Charlie Hills, https://github.com/charlie947/social-media-skills (MIT): the shared voice files every skill reads, the carousel brief with an approval gate before images, the HTML-or-image-model choice for a post graphic, and inspecting every export at feed size.
+- **marketingskills** by Corey Haines, https://github.com/coreyhaines31/marketingskills (MIT, notice above): the five carousel narrative structures and the carousel production checklist in `linkedin-carousel/references/frameworks.md`.
+
+## linkedin-skills
+
+```
+MIT License
+
+Copyright (c) 2026 Sergey Bulaev
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+## social-media-skills
+
+```
+MIT License
+
+Copyright (c) 2026 Charlie Hills
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```

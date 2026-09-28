@@ -1,6 +1,6 @@
 ---
 name: install-agent
-description: Install one of the prebuilt bbm-agents Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk, SEO Desk, Meta Ads Desk, Email Desk, Google Ads Desk, Web Studio) as an owner-reviewed draft, or update an installed one to the latest version. Use when the owner says "install/add/set up the <agent>", "update my agents", "which agents are available", or "are my agents up to date". Never writes or rewrites a persona — it only fills in the owner's names and paths.
+description: Install one of the prebuilt bbm-agents Buzz agents (chief of staff, Agent Builder, Research Lead, YouTube Desk, SEO Desk, Meta Ads Desk, Email Desk, Google Ads Desk, Web Studio, LinkedIn Desk) as an owner-reviewed draft, or update an installed one to the latest version. Use when the owner says "install/add/set up the <agent>", "update my agents", "which agents are available", or "are my agents up to date". Never writes or rewrites a persona — it only fills in the owner's names and paths.
 ---
 
 # install-agent
@@ -27,6 +27,7 @@ The script is `scripts/agents.py`, relative to this skill's folder (the folder c
    - SEO Desk needs Python 3.10+ only. It reads the brand folder, so run `brand-bible` first if the owner hasn't. A Google PageSpeed Insights API key is optional (speed checks); it must be the owner's own, set as `PAGESPEED_API_KEY`.
    - Meta Ads Desk needs Python 3.10+ only and reads the brand folder (`brand-bible` first). Live account access is Meta's own ads connector: offer the one-line setup in `meta-audit/references/connector.md` once the agent is saved; the owner signs in with their Meta login. Without it the desk works from Ads Manager exports.
    - Email Desk needs Python 3.10+ only and reads the brand folder (`brand-bible` first). Its first job is the owner's email voice file, built from 10 to 20 emails they actually sent (`email-sequences`). It never sends email.
+   - LinkedIn Desk needs Python 3.10+ and reads the brand folder (`brand-bible` first). Designed slides render with the owner's own Chrome or Edge (`social-visuals/scripts/visuals.py browser` checks). Image-model visuals are optional: the owner's own Fal or Higgsfield key, which they paste into the file `visuals.py keys init` creates; never ask for it in chat. Its first job is `linkedin-plan` (profile) and `linkedin-stories` (story bank). It never posts.
    - Google Ads Desk needs Python 3.10+ and the Composio CLI with Google Ads linked (`google-ads-audit/references/connect-composio.md`; Windows runs it inside WSL). Offer that walkthrough once the agent is saved. It reads the brand folder (`brand-bible` first). It never changes the Google Ads account.
    - A Gemini key is optional (no-caption videos, corpus extraction). It must be the owner's own. Never copy one from anywhere.
 
@@ -44,7 +45,7 @@ The script is `scripts/agents.py`, relative to this skill's folder (the folder c
 
 ## Order for a fresh workspace
 
-Agent Builder → chief of staff (usually an update of an existing one) → YouTube Desk → Research Lead → SEO Desk → Meta Ads Desk → Email Desk → Google Ads Desk → Web Studio.
+Agent Builder → chief of staff (usually an update of an existing one) → YouTube Desk → Research Lead → SEO Desk → Meta Ads Desk → Email Desk → Google Ads Desk → Web Studio → LinkedIn Desk.
 
 ## Updates
 
