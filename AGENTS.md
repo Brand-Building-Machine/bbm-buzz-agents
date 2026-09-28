@@ -39,8 +39,9 @@ Shipped: `install-agent`, `workspace-config`, `brand-bible`, `wiki-ingest`, `wik
 - Offline tests per skill in `skills/<name>/tests/`, run **separately, from outside the skill dir**: `cd /tmp && python3 -m pytest <abs path>/tests -q -p no:cacheprovider`.
 - `claude plugin validate plugins/bbm-agents` and `claude plugin validate .` must pass.
 - **A live run:** make a scratch workspace + config in your scratchpad, then
-  `BUZZ_AGENTS_CONFIG=<cfg> claude -p "<realistic owner request>" --plugin-dir <repo>/plugins/bbm-agents --allowedTools "Read,Write,Edit,Glob,Grep,Bash,Skill" < /dev/null`
-  and check the files it produced against the skill's own rules.
+  `BUZZ_AGENTS_CONFIG=<cfg> claude -p "<realistic owner request>" --plugin-dir <repo>/plugins/bbm-agents --allowedTools "Read,Write,Edit,Glob,Grep,Bash,Skill" --strict-mcp-config --mcp-config <scratch>/empty-mcp.json < /dev/null`
+  (`empty-mcp.json` = `{"mcpServers":{}}`) and check the files it produced against the skill's own rules.
+  **Isolate it.** Without `--strict-mcp-config` the test session inherits your own connectors (Gmail, Drive, ClickUp) and an agent may go through them to "verify" something; this happened once with meta-tracking. Bash can still reach CLIs on your machine (composio, gws), so give the prompt everything it needs from the scratch workspace.
 - Remove `__pycache__` before committing.
 
 ## After shipping
