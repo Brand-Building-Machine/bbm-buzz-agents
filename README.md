@@ -10,6 +10,7 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | **Research Lead** | Commissioned research with a four-subagent team, sourced and fact-checked | Claude |
 | **YouTube Desk** | Briefs, answers and searches from YouTube | Claude or Codex |
 | **SEO Desk** | Gets you found on Google, Maps and AI answers: audits, local SEO, pages and blog posts in your voice | Claude or Codex |
+| **Meta Ads Desk** | Facebook and Instagram lead ads: audits results, writes new ads, plans changes you approve, checks tracking. Nothing spends without your yes | Claude or Codex |
 
 **Skills they use** (also usable directly):
 
@@ -25,6 +26,10 @@ One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** ag
 | `seo-ai-search` | Whether ChatGPT, Perplexity, Claude and Google AI can find and quote you, and what to fix |
 | `seo-page` | Writes or fixes a page to rank for a keyword, after checking what Google already ranks |
 | `seo-blog` | Plans topics and a calendar, writes sourced, fact-checked posts, refreshes posts losing traffic |
+| `meta-audit` | Reads your Meta lead ads (live via Meta's connector, or an Ads Manager export): which ads to keep, cut, fix or scale, judged on cost per qualified lead |
+| `meta-creative` | Turns your reviews and customer words into distinct ad concepts: hooks, copy, lead-form questions and a design brief for each |
+| `meta-launch` | Writes every change as a plan with a plan id; applies only the plan you approve, everything created paused, then confirms it |
+| `meta-tracking` | Checks leads actually arrive and Meta learns from real leads: forms, pixel, Conversions API, duplicates |
 | `install-agent` · `workspace-config` | Install/update the agents; one-time folder setup |
 
 **Nothing on your machine writes these personas.** They're finished. Installing one fills in your name and
@@ -60,7 +65,7 @@ In any Buzz channel, to your chief of staff or Agent Builder:
 - "Set up my agent config" → `workspace-config` (once)
 - "What agents can I install?" → `install-agent`
 - "Install YouTube Desk" → opens a draft you approve
-- "Install SEO Desk" → same
+- "Install SEO Desk" / "Install Meta Ads Desk" → same
 - "Are my agents up to date?" → offers updates as drafts
 
 ## Updates
@@ -73,9 +78,10 @@ themselves — `install-agent` offers them as drafts for you to approve.
 
 ```
 plugins/bbm-agents/
-  personas/     the five agents (templates with {{PLACEHOLDERS}})
+  personas/     the six agents (templates with {{PLACEHOLDERS}})
   skills/       install-agent, workspace-config, brand-bible, wiki-ingest, wiki-ask, wiki-audit, yt-intel, yt-ask, yt-search, yt-corpus,
-                seo-audit, seo-local, seo-ai-search, seo-page, seo-blog
+                seo-audit, seo-local, seo-ai-search, seo-page, seo-blog,
+                meta-audit, meta-creative, meta-launch, meta-tracking
   agents/       Claude subagents for Research Lead: youtube-scout, web-scout, trend-analyst, fact-checker
   examples/     sample config
 ```
@@ -86,7 +92,10 @@ No client data, credentials or machine paths live in this repo. Yours stay in yo
 
 Python 3.10+ and `yt-dlp` for the YouTube skills. A Gemini API key is optional (videos without captions,
 bulk corpus extraction) and must be your own. The SEO skills need only Python; a Google PageSpeed Insights
-key is optional for speed checks and must be your own.
+key is optional for speed checks and must be your own. The Meta skills need only Python; live account access
+is Meta's own ads connector (`https://mcp.facebook.com/ads`, sign in with your Meta login), optional because an
+Ads Manager export works too.
 
-MIT licensed. The SEO skills adapt method from claude-seo and claude-blog by AgriciDaniel (MIT); see
+MIT licensed. The SEO skills adapt method from claude-seo and claude-blog by AgriciDaniel (MIT); the Meta skills from
+Motion, Corey Haines, Mathias Chu, hyperfx.ai (MIT) and LangChain (Apache-2.0); see
 [`plugins/bbm-agents/CREDITS.md`](plugins/bbm-agents/CREDITS.md).
