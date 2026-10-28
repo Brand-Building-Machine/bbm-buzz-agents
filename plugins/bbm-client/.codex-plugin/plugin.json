@@ -1,0 +1,18 @@
+{
+  "name": "bbm-client",
+  "version": "0.1.0",
+  "description": "Portable client vault setup, capture, recall and knowledge maintenance. No messaging platform required.",
+  "author": {
+    "name": "Brand Building Machine"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "BBM Client",
+    "shortDescription": "Your workspace and knowledge skills",
+    "longDescription": "Bbm Client adds a local Codex plugin scaffold.",
+    "developerName": "Brand Building Machine",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Help me use Bbm Client."
+  }
+}

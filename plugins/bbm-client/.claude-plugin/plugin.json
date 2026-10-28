@@ -1,0 +1,8 @@
+{
+  "name": "bbm-client",
+  "version": "0.1.0",
+  "description": "Portable client vault setup, capture, recall and knowledge maintenance. No messaging platform required.",
+  "author": {
+    "name": "Brand Building Machine"
+  }
+}

@@ -52,3 +52,11 @@ Shipped: `install-agent`, `workspace-config`, `brand-bible`, `wiki-ingest`, `wik
 ## Working alongside another instance
 
 Another Claude session may be building in this repo at the same time. `git pull --rebase` before you start and before every push. Keep commits small and per-skill. The shared files that collide — `README.md` skills table, `workspace-config/SKILL.md`, `examples/*.json`, the three version fields — edit them in one small commit right before pushing. Version: bump the minor for a new skill, patch for fixes.
+
+## Portable client plugin
+
+`plugins/bbm-client/` is a separate, opt-in knowledge plugin for clients using Claude Code or Codex directly. Its setup intentionally does not load agent installers, personas, hooks or messaging-platform configuration. The existing bbm-agents plugin remains compatible and unchanged.
+
+For this plugin only, use workspace-local `bbm-client.json`, with relative paths resolved from the config directory, or explicit `BBM_CLIENT_CONFIG`. Never read the legacy global agent pointer as a fallback. Config keys and meanings are documented in `plugins/bbm-client/skills/workspace-setup/references/config.md`. Shared starter assets must remain generic. Client-specific context belongs only in the client's private repository.
+
+Run its complete unittest suite with `python3 -m unittest discover -s plugins/bbm-client/tests -v`, validate both catalogs and manifests, and run an isolated synthetic capture/ingest/recall test. Keep standalone pack export in sync with the plugin; no separate fork of skill sources.

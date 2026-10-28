@@ -1,7 +1,24 @@
 {
   "name": "bbm-buzz-agents",
-  "owner": { "name": "Brand Building Machine" },
+  "owner": {
+    "name": "Brand Building Machine"
+  },
   "plugins": [
-    { "name": "bbm-agents", "source": "./plugins/bbm-agents" }
+    {
+      "name": "bbm-agents",
+      "source": "./plugins/bbm-agents"
+    },
+    {
+      "name": "bbm-client",
+      "source": {
+        "source": "local",
+        "path": "./plugins/bbm-client"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
   ]
 }

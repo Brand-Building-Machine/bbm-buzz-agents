@@ -1,0 +1,11 @@
+local/
+sites/
+apps/
+credentials/
+.env
+.env.*
+*.pem
+*.key
+.workspace.local.json
+.DS_Store
+__pycache__/

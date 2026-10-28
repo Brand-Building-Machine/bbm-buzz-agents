@@ -1,5 +1,7 @@
 # BBM Buzz Agents
 
+**Using Claude Code or Codex directly?** Install the separate [BBM Client plugin](plugins/bbm-client/README.md) for a portable vault starter and knowledge skills. The existing BBM Agents plugin remains unchanged.
+
 Prebuilt [Buzz](https://github.com/block/buzz) agents and the skills they run, from Brand Building Machine.
 One plugin, installed once, used by both **Claude Code** and **OpenAI Codex** agents. Updates arrive on their own.
 

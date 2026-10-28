@@ -1,3 +1,5 @@
+For clients using Claude Code or Codex without Buzz, use [CLIENT_SETUP_PROMPT.md](CLIENT_SETUP_PROMPT.md) instead. The instructions below are for the existing Buzz agent bundle.
+
 Install the BBM Buzz Agents plugin on this machine for both Claude Code and Codex, then set up my agent config. Do only what's below. Don't create any agents yet.
 
 1. **Find what's installed.** Check which of `claude` and `codex` exist on this machine, their versions, the OS, and which Python the Buzz agents use (3.10+ needed). Report before changing anything if something is missing.
