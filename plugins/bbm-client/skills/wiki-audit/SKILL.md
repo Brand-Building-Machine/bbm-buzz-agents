@@ -8,4 +8,3 @@ Resolve the workspace from `bbm-client.json` in the selected workspace or its pa
 Run wiki.py lint --json for structural findings. It checks exact vault-relative links, orphan wiki pages, and old/un-dated unprocessed sources. Review relevant current state, decisions and recent source notes for contradictions, duplicates, missing topics and outdated claims. A script pass does not prove semantic correctness.
 
 Read-only by default: give counts, the highest-impact supported issue and specific source paths. If a saved report is requested, create a unique dated file under WIKI_PATH/audits; do not overwrite an earlier report. Do not delete, rewrite canon or silently repair findings. Scope negative claims to the files inspected.
-

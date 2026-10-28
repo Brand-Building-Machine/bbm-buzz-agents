@@ -13,4 +13,3 @@ Process one approved source at a time. Read its body, metadata, relevant wiki pa
 4. Preserve decision history; record actual choices only. Canon, standing rules/preferences, targets, budgets and access require the owner's specific authorization. Propose changes without applying them. Knowledge capture never authorizes external action.
 5. Update wiki/index.md and append one source-specific wiki/log.md entry. Check all links and outputs, then mark the source processed by changing frontmatter only. If incomplete, leave needs-review with a precise reason. Never mark a partially applied batch complete. Re-read files before writes; stop on concurrent changes.
 6. Report changed paths and uncertainties. No commit, push, task-system write or messaging is part of ingestion.
-
