@@ -20,3 +20,11 @@ Codex updates: `codex plugin marketplace upgrade`, then restart and verify the p
 Do not edit plugin-cache files. Keep custom skills in your workspace with distinct names. Existing users of bbm-agents should choose one provider for overlapping wiki skills in each workspace; no automatic migration or removal is performed.
 
 Standalone pack: a maintainer can run `scripts/export-client-pack.py /chosen/new-pack.zip` in the distribution repo. The zip contains the same reviewed skills and a README. Extract selected skills into `.agents/skills/` (Codex) or `.claude/skills/` (Claude) only after inspecting existing names. Never overwrite custom skills; review updates as diffs. Plugin installation is the recommended update path.
+
+## More workflows
+
+The client plugin also includes meeting-ingest, video-transcribe, humanizer, develop-a-thought, content-cascade, grill-me and its grilling support skill.
+
+Try: “Set up ingestion from my existing meeting notes”; “Help me develop this idea”; “Grill me on this plan”; “Turn this transcript into a blog and LinkedIn draft.”
+
+Meeting ingestion starts with an export or an available authorized connector. Scheduling is optional and requires a successful manual test first. Video transcription needs a local engine and model; these are not installed by the plugin. Content is drafted, never posted automatically.

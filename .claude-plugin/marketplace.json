@@ -16,8 +16,8 @@
     },
     {
       "name": "bbm-client",
-      "description": "Portable client vault setup, capture, recall and knowledge maintenance. No messaging platform required.",
-      "version": "0.1.0",
+      "description": "Portable client knowledge, meeting ingestion setup, thinking and content skills. No messaging platform required.",
+      "version": "0.2.0",
       "source": "./plugins/bbm-client",
       "category": "productivity"
     }
