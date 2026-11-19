@@ -28,3 +28,5 @@ The client plugin also includes meeting-ingest, video-transcribe, humanizer, dev
 Try: “Set up ingestion from my existing meeting notes”; “Help me develop this idea”; “Grill me on this plan”; “Turn this transcript into a blog and LinkedIn draft.”
 
 Meeting ingestion starts with an export or an available authorized connector. Scheduling is optional and requires a successful manual test first. Video transcription needs a local engine and model; these are not installed by the plugin. Content is drafted, never posted automatically.
+
+Copytrained Coach is also included: “Run a five-wins audit on this copy.” Section Map and deep audits, proof checks and requested rewrites are available.

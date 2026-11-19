@@ -25,17 +25,19 @@ Do not edit plugin-cache files. Keep custom skills in your workspace with distin
 
 Standalone pack: a maintainer can run `scripts/export-client-pack.py /chosen/new-pack.zip` in the distribution repo. The zip contains the same reviewed skills and a README. Extract selected skills into `.agents/skills/` (Codex) or `.claude/skills/` (Claude) only after inspecting existing names. Never overwrite custom skills; review updates as diffs. Plugin installation is the recommended update path.
 
-Version 0.2.0 includes fourteen skills:
+Version 0.3.0 includes fifteen skills:
 
 | Area | Skills |
 |---|---|
 | Workspace and knowledge | workspace-setup, workspace-start, source-capture, wiki-ingest, wiki-ask, wiki-audit, save-session |
 | Meeting workflow | meeting-ingest (provider-neutral setup and processing), video-transcribe (optional installed local engine) |
 | Thinking | develop-a-thought, grill-me and its bundled grilling implementation |
-| Content | humanizer, content-cascade |
+| Content | humanizer, content-cascade, copytrained-coach |
 
 Examples: “Set up meeting ingestion using my existing note-taking app”; “Grill me on this plan”; “Turn this transcript into a blog and LinkedIn draft”; “Help me develop this thought.”
 
 Meeting providers, connectors, schedulers and transcription engines are not bundled. Start with a manual export; configure integrations or scheduling only when requested and tested. Transcription requires a compatible local engine, ffmpeg and model weights; installation/downloads need owner authorization. Cloud uploads and paid APIs are never automatic fallbacks. The core helpers need Python 3.10+ and stdlib only.
 
 Content remains drafts. No personas, agent installer or automatic background capture. Custom workspace skills and existing notes are preserved when updating the plugin. Humanizer and the Matt Pocock skills include their source credits and MIT licenses in their respective skill folders.
+
+Copytrained Coach supports Section Map, deep and five-wins audits, proof checks and requested rewrites. Try: “Run a five-wins audit on this copy.” Reports are delivered in chat; requested saves use your configured draft area. See its SOURCE.md for third-party attribution and distribution status.

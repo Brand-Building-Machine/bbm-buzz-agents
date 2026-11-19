@@ -17,7 +17,7 @@
     {
       "name": "bbm-client",
       "description": "Portable client knowledge, meeting ingestion setup, thinking and content skills. No messaging platform required.",
-      "version": "0.2.0",
+      "version": "0.3.0",
       "source": "./plugins/bbm-client",
       "category": "productivity"
     }
