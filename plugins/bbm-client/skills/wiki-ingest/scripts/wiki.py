@@ -62,6 +62,8 @@ def meta(text, key):
 
 def links(text):
     text = re.sub(r'```.*?```|`[^`\n]*`', '', text, flags=re.S)
+    # Markdown tables escape alias separators; the backslash is not part of the path.
+    text = text.replace('\\|', '|')
     return re.findall(r'\[\[([^\]|#]+)(?:#[^\]|]*)?(?:\|[^\]]*)?\]\]', text)
 
 

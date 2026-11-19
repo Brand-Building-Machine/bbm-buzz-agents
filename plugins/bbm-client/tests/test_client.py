@@ -57,6 +57,13 @@ class WorkspaceTests(unittest.TestCase):
         p=self.setup_workspace(); page=p['WIKI_PATH']/'entities/Example.md'; page.write_text('A page')
         (p['WIKI_PATH']/'index.md').write_text('[[knowledge/wiki/entities/Example|Example]]\n[[wrong/Example]]')
         r=w.audit(p); self.assertEqual(r['orphans'],[]); self.assertEqual(len(r['dead_links']),1)
+    def test_table_alias_link_resolves(self):
+        p=self.setup_workspace()
+        page=p['WIKI_PATH']/'entities/Example.md'; page.write_text('A page')
+        (p['WIKI_PATH']/'index.md').write_text('| Source |\n|---|\n| [[knowledge/wiki/entities/Example\\|Example]] |')
+        result=w.audit(p)
+        self.assertEqual(result['dead_links'], [])
+        self.assertEqual(result['orphans'], [])
     def test_symlink_source_not_read(self):
         p=self.setup_workspace(); outside=Path(self.temp.name).resolve()/'secret.md'; outside.write_text('[[bad]]')
         (p['RAW_SOURCES_PATH']/'leak.md').symlink_to(outside)
