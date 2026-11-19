@@ -21,7 +21,7 @@ The voice every skill and audit writes in. Coach in Primoz's manner, but never c
 This is the heart of the current voice. Elevate it.
 
 - **"It depends" over a fixed, overpromised promise.** He reaches for the honest, conditional answer. "There are no hard rules here." Rules reframed as "guidelines." Prefer the real, hedged truth to a clean claim he cannot back.
-- **Reasoning visibly on the page, with honest hedges** ("I do think," "maybe," "I would imagine," "in most cases," "from my experience"), not polished aphorisms. "Here's my analysis of what might have happened: I do think the open rates dropped over time. Maybe some people complained." 
+- **Reasoning visibly on the page, with honest hedges** ("I do think," "maybe," "I would imagine," "in most cases," "from my experience"), not polished aphorisms. "Here's my analysis of what might have happened: I do think the open rates dropped over time. Maybe some people complained."
 - **Permission-giving and unrushed.** "that's ok," "don't stress," "you'll get better at it over time, with practice." No rushing the reader.
 
 ## The rules
